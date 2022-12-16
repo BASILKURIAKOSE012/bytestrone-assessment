@@ -1,0 +1,50 @@
+
+<div class="row" >
+<div id="d1" class="col-4" >
+    <h3 id="d12"> STS purchased - 4</h3>
+        <h4 id="d121"> STS assigned - {{stsCount}}</h4>
+</div>
+<div id="d2" class="col-4">
+    <h3 id="d21">Office365 purchased - 4</h3>
+    <h4 id="d212">Office365 assigned - {{office365Count}}</h4>
+</div>
+<div id="d3" class="col-4">
+<h3 id="d31"> Selenium purchased - 4</h3>
+<h4 id="d313">Selenium assigned - {{seleniumCount}}</h4>
+</div>
+</div>
+<br>
+<br>
+<div class="container" id="t1">
+    
+    <label for="">Manufacturer Name</label>
+    <select class="form-control" >
+        <option *ngFor="let item of selectedSoftware" [value]="item.manufacturerName"> {{item.manufacturerName}}</option>
+    </select> 
+    <label for="" >Software Name</label>
+    <select class="form-control" >
+        <option *ngFor="let item of selectedSoftware" [value]="item.softwareName" placeholder="Please enter softwarebname"> {{item.softwareName}}</option>
+    </select>
+    <label for="">Software Category</label>
+    <select class="form-control">
+        <option *ngFor="let item of selectedSoftware" [value]="item.softwareCategory"> {{item.softwareCategory}}</option>
+    </select> 
+    <label for="">Software Version</label>
+    <select class="form-control">
+        <option *ngFor="let item of selectedSoftware" [value]="item.softwareVersion"> {{item.softwareVersion}}</option>
+    </select> 
+    
+    <label for="">License Number</label>
+    <select class="form-control"  (click)="checkLicenseNumber($event)" >
+        <option *ngFor="let item of selectedSoftware" [value]="item.licenseNumber"   >{{item.licenseNumber}} </option>
+    </select> 
+  
+    <label for="">Request Id</label>
+   <label for=""></label>
+   <input type="text" class="form-control" [(ngModel)]="userRequestId" [readOnly]="true">
+  
+   <br>
+    <button class="btn btn-success" (click)="releaseSoftware()"  > Approve</button>
+  &nbsp;  <button class="btn btn-danger" routerLink="/home/user-request"  > Cancel </button>
+
+</div>

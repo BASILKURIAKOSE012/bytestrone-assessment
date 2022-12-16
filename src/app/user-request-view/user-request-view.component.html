@@ -1,0 +1,93 @@
+&nbsp; &nbsp; <button class="btn btn-success" (click)="getOpenRequestData(0)">Open Requests</button>
+
+&nbsp; <button class="btn btn-success" (click)="getReleaseRequestData(0)">Release Requests</button>
+<br>
+<br>
+
+  <table *ngIf="users&&show" class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">REQUEST ID</th>
+        <th scope="col">SOFTWARE NAME</th>
+        <th scope="col">SOFTWARE CATEGORY</th>
+        <th scope="col">MANUFACTURER</th>
+        <th scope="col">VERSION</th>
+        <th scope="col">REQUESTED BY</th>
+        <th scope="col">STATUS</th>
+        <th scope="col"> &nbsp; &nbsp; ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of users| paginate
+      : {
+          itemsPerPage: 10,
+          currentPage: currentPageRequestUser,
+          totalItems: countRequestUser
+        }">
+        <th scope="row">{{item.requestId}}</th>
+        <td>{{item.softwareName}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.manufacturer}}</td>
+        <td>{{item.version}}</td>
+        <td>{{item.requestedBy}}</td>
+        <td>{{item.status}}</td>
+        <td>
+          <button class="btn btn-success" (click)="routeAllocate(item.requestId)">Process</button>
+  
+        </td>
+  
+      </tr>
+  
+    </tbody>
+    
+  </table>
+ 
+  <div  *ngIf="users&&show" >
+    <pagination-controls previousLabel="Previous" nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"></pagination-controls>
+  </div>
+
+<!-- <app-user-request-allocate  ></app-user-request-allocate> -->
+
+<table *ngIf="userRelease&&show1" class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">REQUEST ID</th>
+      <th scope="col">SOFTWARE NAME</th>
+      <th scope="col">SOFTWARE CATEGORY</th>
+      <th scope="col">MANUFACTURER</th>
+      <th scope="col">VERSION</th>
+      <th scope="col">REQUESTED BY</th>
+      <th scope="col">RELEASE REASON</th>
+      <th scope="col">STATUS</th>
+      <th scope="col"> ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of userRelease | paginate
+    : {
+        itemsPerPage: 2,
+        currentPage: currentPageReleaseUser,
+        totalItems: countReleaseUser
+      }">
+      <th scope="row">{{item.requestId}}</th>
+      <td>{{item.softwareName}}</td>
+      <td>{{item.category}}</td>
+      <td>{{item.manufacturer}}</td>
+      <td>{{item.version}}</td>
+      <td>{{item.requestedBy}}</td>
+      <td>{{item.releaseReason}}</td>
+      <td>{{item.status}}</td>
+      <td>
+        <button class="btn btn-success" (click)="routeRelease(item.requestId)">Process</button>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+<div  *ngIf="userRelease&&show1" >
+  <pagination-controls previousLabel="Previous" nextLabel="Next"
+    (pageChange)="onTableDataChange1($event)"></pagination-controls>
+</div>

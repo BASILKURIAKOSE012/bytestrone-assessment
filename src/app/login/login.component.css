@@ -1,0 +1,52 @@
+#login {
+    background-color: #1F378C;
+    height: auto;
+    width: 20vw;
+    margin-top: 20vh;
+    border-radius: 2vh;
+}
+
+#d14 {
+    margin-top: 2vh;
+    width: 13vw;
+    margin-left: 3vw;
+}
+
+#d13 {
+    margin-top: 10vh;
+    width: 10vw;
+    margin-left: 4vw;
+}
+
+button {
+    width: 13vw;
+    border-radius: 1vh;
+}
+
+#l1 {
+
+    font-size: 1vh;
+    color: white;
+    margin-left: 7vw;
+    margin-top: -5vh;
+
+
+}
+
+#s1 {
+    margin-left: 1vw;
+
+}
+
+#d11 {
+    margin-top: 2vh;
+}
+
+#d12 {
+    margin-top: 1vh;
+}
+
+#d13 {
+    margin-left: 3vw;
+    margin-bottom: 6vh;
+}

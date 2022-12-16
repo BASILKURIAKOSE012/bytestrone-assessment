@@ -1,0 +1,28 @@
+<nav id="n1" class="navbar navbar-expand-lg navbar-light bg">
+  <form id="f1" class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search Assets" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+
+  <div id="h1">
+    <mat-form-field appearance="fill">
+      <mat-label>Select Asset</mat-label>
+      <mat-select>
+        <mat-option value="one" (click)="route1()">HardWare</mat-option>
+        <mat-option value="two" (click)="route()">Software</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div id="f2">
+    <div id="z1">
+      <h5>Good Evening</h5>
+    </div>
+    <div id="z2">
+      <h5> {{currentUserSalutation}} <strong>{{currentUserName}}</strong></h5>
+    </div>
+    <div id="z3">
+      <h6>{{date|date:'short'}}</h6>
+    </div>
+
+  </div>
+</nav>
